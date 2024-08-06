@@ -14,7 +14,9 @@ To get familiar with the system, we recommend using/referencing the example subm
 7. Push these 4 files to the main branch of the private repository
 8. Clone the *submission_repo* repository to your local system
 9. Copy just the renamed .json file to the *submission_repo* and push to the main branch
-10. Your example code has now been submitted to run on the Coachbot Swarm Testbed
+10. Your example code has now been submitted to run on the Coachbot Swarm Testbed (Note: when the testbed is running, the submission is immediately loaded locally and deleted from the repository)
+11. You can expect to receive up to 3 emails from the system per submission, one confirming validity, one for the start of the experiment, and the last being a notification of completion.
+12. The results of the experiment will be found on a new branch in your private repository with the appropriate time stamp.
 
 #### Expected Results
 This simple example program will have active robots print to a log file, change LED colors, and move around. Robots will first turn the LED green, move forward for 1 second, then backwards for 1 second. The LED will then be set to blue, and the robots will turn right, then left for 1 second each. Finally, the robots will change the LED to red, wait for 1.5 seconds, and then repeat this loop once more before ending the experiment.
