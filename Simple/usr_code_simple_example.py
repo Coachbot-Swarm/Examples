@@ -14,36 +14,39 @@ def usr(robot):
     log.flush()
 
     while True:
-        robot.delay()
-        # your looping code here
+        for i in range(2):
+            robot.delay()
+            # your looping code here
 
-        # set the robot's LED to green
-        robot.set_led(0, 100, 0)
+            # set the robot's LED to green
+            robot.set_led(0, 100, 0)
 
-        # move forward for 1 second
-        robot.set_vel(25,25)
-        robot.delay(1000)
+            # move forward for 1 second
+            robot.set_vel(25,25)
+            robot.delay(1000)
 
-        # move backwards for 1 second
-        robot.set_vel(-25,-25)
-        robot.delay(1000)
+            # move backwards for 1 second
+            robot.set_vel(-25,-25)
+            robot.delay(1000)
 
-        # set the robot's LED to blue
-        robot.set_led(0, 0, 100)
+            # set the robot's LED to blue
+            robot.set_led(0, 0, 100)
 
-        # turn right for 1 second
-        robot.set_vel(25,-25)
-        robot.delay(1000)
+            # turn right for 1 second
+            robot.set_vel(25,-25)
+            robot.delay(1000)
 
-        # turn left for 1 second
-        robot.set_vel(-25,25)
-        robot.delay(1000)
+            # turn left for 1 second
+            robot.set_vel(-25,25)
+            robot.delay(1000)
 
-        # set the robot's LED to red
-        robot.set_led(100, 0, 0)
-        robot.delay(1500)
+            # set the robot's LED to red
+            robot.set_led(100, 0, 0)
+            robot.delay(1500)
 
-        log.write("Finished running the simple example program\n")
-        log.flush()
+            log.write("Finished running the simple example program\n")
+            log.flush()
+
+        # clean up before ending the experiment
         log.close() # closing the log file
         return
