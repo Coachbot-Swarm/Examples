@@ -16,7 +16,11 @@ To get familiar with the system, we recommend using/referencing the example subm
 9. Copy just the renamed .json file to the *submission_repo* and push to the main branch
 10. Your example code has now been submitted to run on the Coachbot Swarm Testbed
 
+#### Expected Results
+This simple example program will have active robots print to a log file, change LED colors, and move around. Robots will first turn the LED green, move forward for 1 second, then backwards for 1 second. The LED will then be set to blue, and the robots will turn right, then left for 1 second each. Finally, the robots will change the LED to red, wait for 1.5 seconds, and then end the experiment.
+
 #### Easy Ways to Customize the Simple Example
 - Change the commanded speed of the robot by changing the values in the API call, robot.set_vel(). Remember that this value needs to be an integer between 10 and 50.
 - Change the robot LED color by changing the values in the API call, robot.set_LED(). These three values need to be between 0 and 100.
 - Add more logging statements in the code.
+- Change the starting points or angles of the robots or change the number of robots participating in the experiment. (Check the User Guide for the restrictions on these initial positions being specified)
