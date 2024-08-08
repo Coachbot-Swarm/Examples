@@ -26,7 +26,19 @@ def usr(robot):
         log.write("My current pose is " + str(curr_pose) + "\n")
         log.flush()
 
-        pos_str = "{},{},{},{}".format(robot.virtual_id(), curr_x, curr_y, curr_theta)
+        # send messages using strings
+        robot.send_msg(struct.pack('f', robot.get_clock()))
+
+        # delay between sending and receiving messages
+        robot.delay()
+
+        # receive a string message
+        msgs = robot.recv_msg()
+        if len(msgs) > 0:
+            time_received = struct.unpack('f'. msgs[0][:4])
+            print("Time received by another robot is", time_received)
+        else:
+            print("No messages received")
         
         # if robot is in the positive x area, turn to the left
         if curr_x >= 0:
@@ -55,9 +67,6 @@ def usr(robot):
         curr_x = curr_pose[0]
         curr_y = curr_pose[1]
         curr_theta = curr_pose[2] 
-
-        # delay between sending and receiving messages
-        robot.delay()
 
         # send the message with the ID of the robot and current position/orientation
         robot.send_msg(struct.pack('ifff', robot.virtual_id(), curr_x, curr_y, curr_theta))
