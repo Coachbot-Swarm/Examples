@@ -26,6 +26,8 @@ def usr(robot):
         log.write("My current pose is " + str(curr_pose) + "\n")
         log.flush()
 
+        pos_str = "{},{},{},{}".format(robot.virtual_id(), curr_x, curr_y, curr_theta)
+        
         # if robot is in the positive x area, turn to the left
         if curr_x >= 0:
             curr_time = robot.get_clock()
