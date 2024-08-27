@@ -29,7 +29,7 @@
 import struct
 
 def usr(robot):
-    log = open("experiment_log", "w")
+    log = open("experiment_log.txt", "w")
     
     log.write("an example write string\n")
     log.flush()
