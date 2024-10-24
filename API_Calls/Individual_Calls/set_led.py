@@ -12,7 +12,7 @@ def usr(robot):
         robot.delay()
 
         # Use a nested for loop to cycle through all possible led colors
-        delta = 10
+        delta = 15
         for r_value in range(0,100, delta):
             for g_value in range(0,100, delta):
                 for b_value in range(0,100, delta):
@@ -24,5 +24,6 @@ def usr(robot):
             robot.set_led(0,100,0) # turn the LED to green
             robot.delay(1000) # wait 1 second
             robot.set_led(0,0,0) # turn the LED off
+            robot.delay(1000) # wait 1 second
 
         return
