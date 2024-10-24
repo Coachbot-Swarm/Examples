@@ -10,9 +10,9 @@
     Example: msgs = robot.recv_msg()
 
     struct.unpack() example:
-    struct.unpack(‘fffii’, msg_received[0][:24])
+    struct.unpack(`fffii`, msg_received[0][:24])
 
-    The first argument, ‘fffii’ specifies the expected message content types. The second parameter specifies the variable I am reading from. 
+    The first argument, `fffii` specifies the expected message content types. The second parameter specifies the variable I am reading from. 
     Whatever variable I save the output of the robot.recv_msg() in will contain the entire buffer of messages. In this example, I am reading in 
     the first message in the buffer and the [:24] specifies the message length, which is the byte length of the expected message. Since floats 
     and integers are both four bytes each, we determine this message length by multiplying the number of variables expected in the message with 
@@ -52,6 +52,7 @@ def usr(robot):
             else:
                 log.write("No messages received")
                 log.flush()
+            robot.delay(1000) # delay for 1 second between each loop
                 
         log.close() # close the file
         return
