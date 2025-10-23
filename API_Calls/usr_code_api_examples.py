@@ -4,7 +4,7 @@ import struct
 def usr(robot):
     robot.delay(3000) # ensures that the camera and all other peripherals are up and running before your code begins
     # any set up variables or code before looping can go here
-    log = open("experiment_log.txt", "w")
+    log = open("experiment_log.txt", "wb")
     
     log.write("an example write string\n")
     log.flush()
